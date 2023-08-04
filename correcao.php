@@ -10,9 +10,16 @@
     <hr>
 
     <?php
+
+    function calcularMedia($n1, $n2 ){
+        //Versão 1 (variável local)
+       $media = ($n1 + $n2) / 2;
+        return $media;
+    }
+
     $nota1 = 8;
     $nota2 = 7;
-    $media = ($nota1 + $nota2) / 2;
+    $media = calcularMedia($nota1, $nota2);
 
     if($media >= 7){
         $situacao = "aprovado";
