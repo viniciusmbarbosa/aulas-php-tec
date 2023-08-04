@@ -61,7 +61,25 @@
     <pre><?=var_dump($bandas)?></pre>
     <pre><?=var_dump($textoBandas)?></pre>
 
-    
+    <h3>extract()</h3>
+<?php
+    /*Função que extrai chaves associativas para variáveis  */
+    $aluno = [
+        "id" => 1,
+        "nome" => "Chave do 8",
+        "idade" => 25,
+    ];
+extract($aluno);
+?>
+
+<ul>
+    <li>Nome:<?=$nome?></li>
+    <li>ID:<?=$id?></li>
+    <li>Idade: <?=$idade?></li>
+</ul>
+
+<h3>array_sum</h3>
+
     <h2>Filtros</h2>
 
     <h2>Seguranças</h2>
