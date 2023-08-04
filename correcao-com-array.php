@@ -36,16 +36,51 @@
             return "Reprovado";
         } */
     }
+//Lista de alunos e suas notas
 
-    $nota1 = 8;
-    $nota2 = 7;
-    $media = calcularMedia($nota1, $nota2);
-    $situacao = verificarSituacao($media);
-    
-   
+    $alunos = [
+      [
+        "nome" => "Vinícius",
+        "nota1" => 9,
+        "nota2" => 6,
+    ],
+      [
+        "nome" => "Vitor",
+        "nota1" => 5.5,
+        "nota2" => 7,
+    ],
+      [
+        "nome" => "Valeska",
+        "nota1" => 6.66,
+        "nota2" => 8,
+    ],
+      [
+        "nome" => "Eliel",
+        "nota1" => 6.66,
+        "nota2" => 8,
+    ],
+      [
+        "nome" => "Nicolas",
+        "nota1" => 0,
+        "nota2" => 1,
+    ],
+];
+
+
+    //$media = calcularMedia($nota1, $nota2);
+    //$situacao = verificarSituacao($media);
+
+    foreach( $alunos as $aluno){
+        $nome = $aluno['nome'];
+        $media = calcularMedia($aluno['nota1'], $aluno['nota2']);
+        $situacao = verificarSituacao($media);
     ?>
-
+    <p><?=$nome?></p>
     <p ><?=$media?></p>
     <p class="<?=$situacao?>"><?=$situacao?></p>
+
+    <?php
+    }
+    ?>
 </body>
 </html>
