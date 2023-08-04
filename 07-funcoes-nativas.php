@@ -79,6 +79,26 @@ extract($aluno);
 </ul>
 
 <h3>array_sum</h3>
+<?php
+/* Função para somar os valores de um array */
+$total = array_sum($valores);
+
+?>
+<p>Soma dos valores: <?=$total?></p>
+
+<h3>Array_unique()</h3>
+
+<?php
+/*  Função que retorna um novo array  com dados únicos. */
+$produtos = [
+    "TV", "Notebook", "TV", "Geladeira", "Monitor", "Notebook", "Teclado", "Mouse"
+];
+
+$produtosUnicos = array_unique($produtos);
+
+?>
+<pre><?=var_dump($produtos)?></pre>
+<pre><?=var_dump($produtosUnicos)?></pre>
 
     <h2>Filtros</h2>
 
