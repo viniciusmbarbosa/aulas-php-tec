@@ -15,11 +15,30 @@
             <label for="nome">Nome:</label>
             <input required type="text" name="nome" id="nome">
         </p>
+
         <p>
             <label for="email">E-mail:</label>
             <input required type="email" name="email" id="email">
 
         </p>
+
+        <p>
+            <label for="email">Idade:</label>
+            <input  type="number" name="idade" min="12" max="120" id="idade">
+
+        </p>
+
+        <div>
+            <p>Interesses: <br></p>
+            
+            <!-- Importante: campos checkbox necessitam de [] juntos com o name para o back-and (php) entender como uma lista (array) de valores -->
+            <input type="checkbox" name="interesse[]" id="sql" value="SQL">
+            <label for="slq">SQL</label>
+            <input type="checkbox" name="interesse[]" id="node" value="node">
+            <label for="node">Node.js</label>
+            <input type="checkbox" name="interesse[]" id="ux" value="ux">
+            <label for="ux">UX</label>
+        </div>
 
         <p> 
             <label for="mensagem">Mensagem:</label><br>

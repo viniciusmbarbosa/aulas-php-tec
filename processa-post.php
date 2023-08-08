@@ -21,15 +21,28 @@
 
     $nome = $_POST["nome"];
     $email = $_POST["email"];
+    $idade = $_POST["idade"];
+    if(isset($interesse)){
+            $interesse = array();
+    }  
     $mensagem = $_POST["mensagem"];
     ?>
 
     
     <h2>Dados:</h2>
     <ul>
+
         <li>Nome: <?=$nome?></li>
         <li>E-mail: <?=$email?></li>
+        <li>Idade: <?=$idade?></li>
+        
+        <li>Interesse: <?=implode(",", $interesse)?></li>
+
+
+        <!-- Se a variável NÃO ESTIVER VAZIA, mostre o <li> com a mensagem -->
+        <?php if(  !empty($mensagem)){?>
         <li>Mensagem: <?=$mensagem?></li>
+        <?php } ?>
     </ul>
     <?php
     }
