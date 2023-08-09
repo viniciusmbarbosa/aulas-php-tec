@@ -22,9 +22,13 @@
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $idade = $_POST["idade"];
-    if(isset($interesse)){
-            $interesse = array();
-    }  
+    
+    //$interesse = isset($_POST['interesses']) ? $_POST ['Interesse'] : []; 
+    
+    //solução 2
+    // Solução usando operadoe de coalescência: ??
+    //(disponível a partir da versão 7 do php)
+    $interesse = $_POST["interesse"] ?? [];
     $mensagem = $_POST["mensagem"];
     ?>
 
