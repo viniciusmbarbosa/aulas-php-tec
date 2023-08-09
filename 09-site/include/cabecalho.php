@@ -1,5 +1,5 @@
 <?php
-$pagina =  basename($_SERVER['PHP_SELF']);
+  
 
 
   /*   switch($pagina){

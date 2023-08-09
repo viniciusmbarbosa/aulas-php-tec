@@ -6,6 +6,9 @@
     <title>Processamento POST</title>
 </head>
 <body>
+
+    
+
     <h1>Exemplo usando POST</h1>
     <hr>
     <p>Receber e processar dados via <b>POST</b></p>
