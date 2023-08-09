@@ -18,18 +18,28 @@
         <p><a href="10-formulario.html">Voltar</a></p>
     <?php 
     }else{
-
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $idade = $_POST["idade"];
     
+     //$nome = filter_var($_POST["nome"], FILTER_SANITAZE_SPECIAL_CHARS);   
+    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+    //$nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+    //$idade = $_POST["idade"];
+    $idade = filter_input(INPUT_POST, "idade", FILTER_SANITIZE_NUMBER_INT);
+    
+    //$mensagem = $_POST["mensagem"];
+    $mensagem = filter_input(INPUT_POST, "mensagem", FILTER_SANITIZE_SPECIAL_CHARS);
+
     //$interesse = isset($_POST['interesses']) ? $_POST ['Interesse'] : []; 
     
     //solução 2
     // Solução usando operadoe de coalescência: ??
     //(disponível a partir da versão 7 do php)
-    $interesse = $_POST["interesse"] ?? [];
-    $mensagem = $_POST["mensagem"];
+    //$interesses = $_POST["interesse"] ?? [];
+    $interesses = filter_var_array(
+        $_POST["interesses"] ?? [],
+        FILTER_SANITIZE_SPECIAL_CHARS
+    );
     ?>
 
     
@@ -39,9 +49,20 @@
         <li>Nome: <?=$nome?></li>
         <li>E-mail: <?=$email?></li>
         <li>Idade: <?=$idade?></li>
-        
-        <li>Interesse: <?=implode(",", $interesse)?></li>
 
+        <?php if( !empty($interesses)) { ?>
+        <!--  Transformando o array $interesses em string -->
+        <li>Interesse: <?=implode(",", $interesses)?></li>
+
+        <li>Interesse:
+            <ul>
+                <?php foreach($interesses as $interesse){ ?>
+                <li><?=$interesse?></li>
+                <?php } ?>
+            </ul>
+        </li>
+
+        <?php } ?>
 
         <!-- Se a variável NÃO ESTIVER VAZIA, mostre o <li> com a mensagem -->
         <?php if(  !empty($mensagem)){?>
