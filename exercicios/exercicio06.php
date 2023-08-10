@@ -16,8 +16,8 @@
 <body >
 
     <div class="container w-md-50 ">
-        <h1 class="bg-primary text-white p-3 rounded">Formulário</h1>
-        <hr>
+        <h1 class="bg-primary text-white p-3 rounded col-xl-6">Formulário</h1>
+        <hr class="col-xl-6">
         <?php
         $fabricantes = ["-", "Samsung", "Motorola", "LG"];
         ?>

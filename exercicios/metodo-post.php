@@ -10,8 +10,11 @@
  <?php  
  
  if( empty($_POST["nomeProduto"]) || empty($_POST["preco"])) { ?>
-    <p>O produto e o nome precisam ser preenchido!!</p>
-    <a href="exercicio06.php">Voltar</a>
+    <div class="container">
+        <p class="fs-1">Erro:401</p>
+        <p class="fs-3 text-danger ">É necessário preencher todos os campos!</p>
+        <a class="btn btn-primary fs-4" href="exercicio06.php">Voltar</a>
+    </div>
 <?php } else{
 
 if (isset($_POST["enviar"])){
