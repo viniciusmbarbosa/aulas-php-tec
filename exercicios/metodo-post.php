@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Informações do formulário</title>
 </head>
 <body>
@@ -26,19 +27,21 @@ if (isset($_POST["enviar"])){
 
 ?>
 
-<h1>Cadastro de produtos</h1>
- 
-<ul style="list-style: none;">
-    <li>Nome: <?=$nomeProduto?></li>
-    <li>Fabricante: <?=$fabricante?></li>
-    <li>Preço: <?=$preco?></li>
-    <li>Disponibilidade: <?=$disponibilidade?></li>
-    <li>Descrição:<?=$descricao?></li>
-</ul>
-<?php
-
-} 
-
-?>
+<div class="container w-md-50">
+    <h1 class="bg-primary text-white p-3 rounded">Cadastro de produtos</h1>
+    
+    <ul class="fs-4 border rounded shadow-none p-3 mb-5 bg-body-tertiary" style="list-style: none;">
+        <li>Nome: <?=$nomeProduto?></li>
+        <li>Fabricante: <?=$fabricante?></li>
+        <li>Preço: R$<?=number_format($preco, 2, ",",".")?></li>
+        <li>Disponibilidade: <?=$disponibilidade?></li>
+        <li>Descrição:<?=$descricao?></li>
+    </ul>
+    <?php
+    
+    }
+    
+    ?>
+</div>
 </body>
 </html>
