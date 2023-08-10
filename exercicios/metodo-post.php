@@ -6,15 +6,25 @@
     <title>Informações do formulário</title>
 </head>
 <body>
-    
+ <?php   
+if (isset($_POST["enviar"])){
+    $nomeProduto = filter_input(INPUT_POST, "nomeProduto", FILTER_SANITIZE_SPECIAL_CHARS);
+    $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_INT);
+    $disponibilidade = filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
+    $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_NUMBER_INT);
+    $fabricante = filter_input(INPUT_POST, "fabricante", FILTER_SANITIZE_SPECIAL_CHARS);
 
+}
+?>
 
-    <?php 
-    $nome = $_POST["nome"];
-    $preco = $_preco["preco"];
-    $descricao = $_POST["descricao"];
-    ?>
-
-
+<h1>Cadastro de produtos</h1>
+ 
+<ul style="list-style: none;">
+    <li>Nome: <?=$nomeProduto?></li>
+    <li>Fabricante: <?=$fabricante?></li>
+    <li>Preço: <?=$preco?></li>
+    <li>Disponibilidade: <?=$disponibilidade?></li>
+    <li>Descrição:<?=$descricao?></li>
+</ul>
 </body>
 </html>
