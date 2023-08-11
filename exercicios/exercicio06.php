@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bom uso do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Fomulário Em PHP</title>
     <style>
@@ -19,6 +21,7 @@
         <h1 class="bg-primary text-white p-3 rounded col-xl-6">Formulário</h1>
         <hr class="col-xl-6">
         <?php
+        /* Deixar um "-" dentro do array é uma horrenda gambiarra hein... */
         $fabricantes = ["-", "Samsung", "Motorola", "LG"];
         ?>
         <div class="row col-lx-6">
@@ -32,7 +35,10 @@
                     <p class="col-6 col-md-4 col-xl-3">
                         <label for="fabricante">Fabricante:</label>
                         <select class="form-control" name="fabricante" id="fabricante">
+                            <!-- Deveria deixar um <option> vazio aqui direto no HTML, antes
+                            do PHP. Evitando a gambiarra do "-"  -->
                             <?php
+                            /* Mas o PHP em si está certo */
                             foreach ($fabricantes as $fabricante) { ?>
                                 <option value="<?= $fabricante; ?>"><?= $fabricante ?></option>
                             <?php } ?>
@@ -44,6 +50,7 @@
                     </p>
                     <p>
                     <h3>Disponibilidade </h3>
+                    <!-- Faltou o "sim" dentro do for -->
                     <label for="">Sim</label>
                     <input value="Sim" type="radio" name="disponibilidade" id="sim">
                     <label for="opcao">Não</label>

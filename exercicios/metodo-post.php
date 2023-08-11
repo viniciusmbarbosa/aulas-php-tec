@@ -17,7 +17,12 @@
     </div>
 <?php } else{
 
+/* Esse if isset é desnecessário.
+Afinal, você já tinha definido no action do formulário
+redirecionando pra cá. */
 if (isset($_POST["enviar"])){
+
+    /* Sanitizações estão corretas */
     $nomeProduto = filter_input(INPUT_POST, "nomeProduto", FILTER_SANITIZE_SPECIAL_CHARS);
     $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     $disponibilidade = filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
